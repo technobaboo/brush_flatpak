@@ -15,5 +15,5 @@ jobs:
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: org.ArthurBrussee.Brush.flatpak
-          manifest-path: brush_flatpak/org.ArthurBrussee.Brush.json
+          manifest-path: org.ArthurBrussee.Brush.json
           cache-key: flatpak-builder-${{ github.sha }}
