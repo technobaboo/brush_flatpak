@@ -1,0 +1,35 @@
+{
+  "id": "org.ArthurBrussee.Brush",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
+  "command": "brush",
+  "finish-args": ["--socket=fallback-x11", "--socket=wayland", "--device=dri"],
+  "modules": [
+    {
+      "name": "brush",
+      "buildsystem": "simple",
+      "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin",
+        "build-args": ["--share=network"],
+        "env": {
+          "CARGO_HOME": "/run/build/brush/cargo"
+        }
+      },
+      "build-commands": [
+        "cargo build -p brush-app --release",
+        "install -Dm755 target/release/brush_app /app/bin/brush",
+        "install -Dm644 assets/org.ArthurBrussee.Brush.desktop /app/share/applications/org.ArthurBrussee.Brush.desktop",
+        "install -Dm644 crates/brush-app/assets/icon-256.png /app/share/icons/hicolor/256x256/apps/org.ArthurBrussee.Brush.png"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/ArthurBrussee/brush.git",
+          "branch": "main"
+        }
+      ]
+    }
+  ]
+}
