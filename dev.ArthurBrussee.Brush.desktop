@@ -2,7 +2,7 @@
 Name=Brush
 Comment=3D Reconstruction for all
 Exec=brush
-Icon=org.ArthurBrussee.Brush
+Icon=dev.ArthurBrussee.Brush
 Terminal=false
 Type=Application
 Categories=Graphics;

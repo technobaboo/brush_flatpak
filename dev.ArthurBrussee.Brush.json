@@ -1,5 +1,5 @@
 {
-  "id": "org.ArthurBrussee.Brush",
+  "id": "dev.ArthurBrussee.Brush",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
@@ -20,8 +20,8 @@
       "build-commands": [
         "cargo build -p brush-app --release",
         "install -Dm755 target/release/brush_app /app/bin/brush",
-        "install -Dm644 assets/org.ArthurBrussee.Brush.desktop /app/share/applications/org.ArthurBrussee.Brush.desktop",
-        "install -Dm644 crates/brush-app/assets/icon-256.png /app/share/icons/hicolor/256x256/apps/org.ArthurBrussee.Brush.png"
+        "install -Dm644 dev.ArthurBrussee.Brush.desktop /app/share/applications/dev.ArthurBrussee.Brush.desktop",
+        "install -Dm644 crates/brush-app/assets/icon-256.png /app/share/icons/hicolor/256x256/apps/dev.ArthurBrussee.Brush.png"
       ],
       "sources": [
         {
