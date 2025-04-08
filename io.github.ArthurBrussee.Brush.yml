@@ -16,12 +16,11 @@ modules:
     buildsystem: simple
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
-      build-args:
-        - "--share=network"
       env:
         CARGO_HOME: /run/build/brush/cargo
     build-commands:
-      - cargo build -p brush-app --release
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo --offline build --release --verbose
       - install -Dm755 target/release/brush_app /app/bin/brush
       - >-
         install -Dm644 io.github.ArthurBrussee.Brush.desktop
@@ -30,6 +29,8 @@ modules:
         install -Dm644 crates/brush-app/assets/icon-256.png
         /app/share/icons/hicolor/256x256/apps/io.github.ArthurBrussee.Brush.png
     sources:
+      - type: file
+        path: cargo-sources.json
       - type: file
         path: io.github.ArthurBrussee.Brush.desktop
       - type: git
