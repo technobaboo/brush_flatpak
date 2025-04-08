@@ -22,15 +22,10 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
       - install -Dm755 target/release/brush_app /app/bin/brush
-      - >-
-        install -Dm644 io.github.ArthurBrussee.Brush.desktop
-        /app/share/applications/io.github.ArthurBrussee.Brush.desktop
-      - >-
-        install -Dm644 crates/brush-app/assets/icon-256.png
-        /app/share/icons/hicolor/256x256/apps/io.github.ArthurBrussee.Brush.png
+      - install -Dm644 io.github.ArthurBrussee.Brush.desktop /app/share/applications/io.github.ArthurBrussee.Brush.desktop
+      - install -Dm644 crates/brush-app/assets/icon-256.png  /app/share/icons/hicolor/256x256/apps/io.github.ArthurBrussee.Brush.png
     sources:
-      - type: file
-        path: cargo-sources.json
+      - cargo-sources.json
       - type: file
         path: io.github.ArthurBrussee.Brush.desktop
       - type: git
